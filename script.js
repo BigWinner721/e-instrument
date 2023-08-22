@@ -39,6 +39,41 @@ const soundFiles = [
     // 添加更多声音文件路径
 ];
 
+function preloadAudioFile(file) {
+    return new Promise(function (resolve, reject) {
+        var audio = new Audio();
+        audio.src = file;
+        audio.preload = 'auto';
+        audio.addEventListener('canplaythrough', resolve);
+        audio.addEventListener('error', reject);
+    });
+}
+
+function preloadAudioFiles(files) {
+    var promises = [];
+    for (var i = 0; i < files.length; i++) {
+        promises.push(preloadAudioFile(files[i]));
+    }
+    return Promise.all(promises);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var loadingMessage = document.getElementById('loading-message');
+    var content = document.getElementById('content');
+
+    preloadAudioFiles(soundFiles)
+        .then(function () {
+            // 在音频文件加载完成后，隐藏加载提示消息并显示内容
+            loadingMessage.style.display = 'none';
+            content.style.display = 'block';
+        })
+        .catch(function (error) {
+            // 处理加载错误
+            console.error('音频文件加载出错:', error);
+        });
+});
+
+
 // 创建音频对象
 const audioObjects = soundFiles.map(file => new Audio(file));
 

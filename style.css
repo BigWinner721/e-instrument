@@ -4,6 +4,15 @@ html {
     font-style: normal;
 }
 
+#loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 body {
     touch-action: manipulation;
 }

@@ -8,37 +8,59 @@
 </head>
 
 <body>
+    <div id="loading-message">正在加载...</div>
     <!-- grid-container -->
-    <div class="grid-container">
-        <!-- 方格元素 -->
-        <div class="grid-item">
-            <span class="text">木鱼1</span>
+    <div id="content" style="display: none;">
+        <div class="grid-container">
+            <!-- 方格元素 -->
+            <div class="grid-item">
+                <span class="text">木鱼1</span>
+            </div>
+            <div class="grid-item">
+                <span class="text">木鱼2</span>
+            </div>
+            <div class="grid-item">
+                <span class="text">铃</span>
+            </div>
+            <div class="grid-item">
+                <span class="text">铛</span>
+            </div>
+            <div class="grid-item">
+                <span class="text">磬</span>
+            </div>
+            <div class="grid-item">
+                <span class="text">引磬</span>
+            </div>
+            <div class="grid-item">
+                <span class="text">钹</span>
+            </div>
+            <div class="grid-item">
+                <span class="text">铙</span>
+            </div>
+            <!-- 添加更多方格元素 -->
         </div>
-        <div class="grid-item">
-            <span class="text">木鱼2</span>
-        </div>
-        <div class="grid-item">
-            <span class="text">铃</span>
-        </div>
-        <div class="grid-item">
-            <span class="text">铛</span>
-        </div>
-        <div class="grid-item">
-            <span class="text">磬</span>
-        </div>
-        <div class="grid-item">
-            <span class="text">引磬</span>
-        </div>
-        <div class="grid-item">
-            <span class="text">钹</span>
-        </div>
-        <div class="grid-item">
-            <span class="text">铙</span>
-        </div>
-        <!-- 添加更多方格元素 -->
+
     </div>
 
     <script src="script.js"></script>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var loadingMessage = document.getElementById('loading-message');
+            var content = document.getElementById('content');
+
+            loadingMessage.style.visibility = 'visible';
+            content.style.display = 'none';
+        });
+
+        window.addEventListener('load', function () {
+            var loadingMessage = document.getElementById('loading-message');
+            var content = document.getElementById('content');
+
+            loadingMessage.style.visibility = 'hidden';
+            content.style.display = 'block';
+        });
+    </script> -->
+
 </body>
 
 </html>
